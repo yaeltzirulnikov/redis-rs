@@ -1,5 +1,6 @@
 use std::collections::{BTreeMap, BTreeSet};
 use std::collections::{HashMap, HashSet};
+use std::collections::hash_map::Iter;
 use std::convert::From;
 use std::default::Default;
 use std::error;
@@ -597,6 +598,11 @@ impl InfoDict {
     /// Checks if the dict is empty.
     pub fn is_empty(&self) -> bool {
         self.map.is_empty()
+    }
+
+    /// Returns itearotr for the dict.
+    pub fn iter(&self) -> Iter<'_, String, Value> {
+        self.map.iter()
     }
 }
 
